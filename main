@@ -1,0 +1,845 @@
+
+Black Lives Matter. Read our official statement here.
+
+
+virtual-botanic-garden
+
+Show
+index.html
+Sign in to access all your projects anywhere
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Virtual botanic garden</title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+  
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@5.1.2/dist/aframe-animation-component.min.js"></script>
+   
+    
+  </head>  
+  <body>
+      <a-scene loading-screen="dotsColor: green; backgroundColor: white" cursor="rayOrigin: mouse" vr-mode-ui="enabled: false">
+        
+        <a-assets>
+           <img id="home" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2Fhomeicon.png?v=1594568190751">
+           <img id="arrow_left" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2FarrowVirtualBotanicalGarden.png?v=1594394999070">
+           <img id="arrow_right" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2Farrow_right.png?v=1594395133629">
+          
+          
+          <a-asset-item id="groundplate" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2FGroundplate.gltf?v=1594122477693"></a-asset-item>
+          <a-asset-item id="1_Steingarten_Blau_Weiss" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F1_SteingartenWB.gltf?v=1593861376449"></a-asset-item>
+          <a-asset-item id="2_Prachtstauden" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F2_Prachtstauden.gltf?v=1593862384843"></a-asset-item>
+          <a-asset-item id="3_Staudenbeete" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F3_Staudenbeete.gltf?v=1593861374648"></a-asset-item>
+          <a-asset-item id="4_Wechselflor" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F4_Wechselflor.gltf?v=1593862911960"></a-asset-item>
+          <a-asset-item id="4K_Froschbrunnen" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F4K.gltf?v=1593976669057"></a-asset-item>
+          <a-asset-item id="5_Pergola" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F5_Pergola.gltf?v=1593863386489"></a-asset-item>
+          <a-asset-item id="6_Kaleidoskop-Garten" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F6_Kaleidoskop%20Garten.gltf?v=1593861375170"></a-asset-item>
+          <a-asset-item id="6K_Drei_Maedchen_im_Wind" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F6K.gltf?v=1593974827229"></a-asset-item>
+          <a-asset-item id="7_Im_Teich" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F7_ImTeich.gltf?v=1593863768310"></a-asset-item>
+          <a-asset-item id="7K_Bürgerbrunnen" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F7K.gltf?v=1593976449531"></a-asset-item>
+          <a-asset-item id="8_Teichbeete_am_Hauptweg" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F8_TeichbeeteHauptweg.gltf?v=1593868552374"></a-asset-item>
+          <a-asset-item id="8K_Granitsaeule" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F8K.gltf?v=1593974975338"></a-asset-item>
+          <a-asset-item id="9_Teichbeete_am_Gruen" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F9_TeichbeeteZumGr%C3%BCn.gltf?v=1593861375883"></a-asset-item>
+          <a-asset-item id="10_Pflanzen_am_Bach" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F10_PflanzenAmBach.gltf?v=1593864315374"></a-asset-item>
+          <a-asset-item id="11_Steingarten_Serpentinit" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F11_SteingartenSerpentit.gltf?v=1594075176691"></a-asset-item>
+          <a-asset-item id="12_Steingarten_Kohlenkalk" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F12_SteingartenKohlenkalk.gltf?v=1594075469463"></a-asset-item>
+          <a-asset-item id="13_Steingarten_Hexenbesen" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F13_SteinagrtenHexenbesen.gltf?v=1594075177550"></a-asset-item>
+          <a-asset-item id="14_Alpenwald" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F14_Alpenwald.gltf?v=1593868460737"></a-asset-item>
+          <a-asset-item id="15_Steingarten_Hofer_Marmor" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F15_SteingatzenHoferMarmor.gltf?v=1594075177259"></a-asset-item>
+          <a-asset-item id="16_Steingarten_Krustensteinbrech" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F16_Steingarten%20Krustensteinbruch.gltf?v=1594075176508"></a-asset-item>
+          <a-asset-item id="17_Rund_um_den_Steingarten" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F17_RundUmDenSteingaren.gltf?v=1594075176639"></a-asset-item>
+          <a-asset-item id="17K_Steinkugel_mit_Haiku-Gedicht" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F17K.gltf?v=1593975540249"></a-asset-item>
+          <a-asset-item id="18_Felsspaltengarten_Muschelkalk" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F18_FelsspaltengartenMuschelkalk.gltf?v=1594077555247"></a-asset-item>
+          <a-asset-item id="19_Strauchpfingstrosen" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F19_Strauchpfingstrosen.gltf?v=1593861624591"></a-asset-item>
+          <a-asset-item id="20_Schattenquartier" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F20_Schattenquartier.gltf?v=1593868460871"></a-asset-item>
+          <a-asset-item id="21_Voreiszeitliche_Pflanzen" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F21_VoreiszeitlichePflanzen.gltf?v=1594197803851"></a-asset-item>
+          <a-asset-item id="22_Phlox-Allee" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F22_PhloxAllee.gltf?v=1593868645901"></a-asset-item>
+          <a-asset-item id="23_Silphien" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F23_Sillphien.gltf?v=1593868645766"></a-asset-item>
+          <a-asset-item id="24_Pfingstrosenbeet" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F24_Pfingstrosenbeet.gltf?v=1593868645354"></a-asset-item>
+          <a-asset-item id="25_Heidegarten" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F25_Heidegarten.gltf?v=1593861998811"></a-asset-item>
+          <a-asset-item id="25K_Walther_von_der_Vogelweide" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F25K.gltf?v=1593974824371"></a-asset-item>
+          <a-asset-item id="26_Rosarium" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F26_Rosarium.gltf?v=1593861999265"></a-asset-item>
+          <a-asset-item id="27_Bartiris-Hügel" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F27_BartirisH%C3%BCgel.gltf?v=1593862876781"></a-asset-item>
+          <a-asset-item id="27K_Garten-Pavillon" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F27K.gltf?v=1594077222628"></a-asset-item>
+          <a-asset-item id="28_Eklogit-Huegel" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F28_Eklogith%C3%BCgel.gltf?v=1593863147396"></a-asset-item>
+          <a-asset-item id="29_Wuestenkinder" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F29_W%C3%BCstenkinder.gltf?v=1593864256372"></a-asset-item>
+          <a-asset-item id="30_Heilpflanzengarten" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F30_Heilpflanzengarten.gltf?v=1593861999681"></a-asset-item>
+          <a-asset-item id="30K_Das_Matterhorn" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F30K.gltf?v=1593974298819"></a-asset-item>
+          <a-asset-item id="31_Steingarten_Muschelkalk" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F31_SteingartenMuschelkalk.gltf?v=1593863147687"></a-asset-item>
+          <a-asset-item id="32_Felsspaltengarten_Gneis" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F32_Felsspaltengarten%20Gneis.gltf?v=1593864532969"></a-asset-item>
+          
+          
+          
+          <a-asset-item id="Sensor_Icon" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2Fsensor.gltf?v=1594073428162"></a-asset-item>
+          <a-asset-item id="Sensor_Ring" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2FSensorRing.gltf?v=1594068065011"></a-asset-item>
+          <a-asset-item id="Sensor_Graph_1" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2FSensorgraph_Luftfeuchtigkeit.gltf?v=1594578763223"></a-asset-item>
+          <a-asset-item id="Sensor_Graph_2" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2FSensorgraph_UVLicht.gltf?v=1594578383016"></a-asset-item>
+          <a-asset-item id="Sensor_Graph_3" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2FSensorgraph_Bodenfeuchtigkeit.gltf?v=1594578758227"></a-asset-item>
+          <a-asset-item id="Sensor_Graph_4" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2FSensorgraph_Temperatur.gltf?v=1594578382870"></a-asset-item>
+          </a-assets>
+        
+      
+              
+          <!-- Grundplatte -->
+          <a-entity gltf-model="#groundplate" scale=".05 .05 .05" rotation="0 -40 0" position="0 0 0">
+                    
+        
+            
+            <!-- 1 -->
+            <a-entity gltf-model="#1_Steingarten_Blau_Weiss" id="a1"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__camera="_target: #camera; _event: click; animation.property: position; animation.id: KA_1; animation.to: 0.35 0.6 0.05; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -63 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+              
+            </a-entity>
+            
+            <!-- 2 -->
+            <a-entity gltf-model="#2_Prachtstauden" id="a2"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="; _target: #camera; _event: click; animation.property: position; animation.to: 0.8 0.85 1; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 23 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 3 -->
+            <a-entity gltf-model="#3_Staudenbeete" id="a3"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 0.7 0.6 0.9; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 23 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 4 -->
+            <a-entity gltf-model="#4_Wechselflor" id="a4"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 0.78 0.6 1.1; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 23 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 4K -->
+            <a-entity gltf-model="#4K_Froschbrunnen" id="b4"
+                      position="2 0.35 13.5"
+                      scale="0.7 0.7 0.7"
+                      event-set__enter="_event: mouseenter; animation.property: rotation; animation.to: 0 3600 0; animation.dur: 60000; animation.easing: linear"
+                      event-set__leave="_event: mouseleave; animation.property: rotation; animation.to: 0 0 0; animation.dur: 1; animation.easing: linear"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to:  -0.1 0.5 1.2; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 23 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 5 -->
+            <a-entity gltf-model="#5_Pergola" id="a5"
+                      position="0 0 0"
+                      
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -0.3 0.6 1.2; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 23 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 6 -->
+            <a-entity gltf-model="#6_Kaleidoskop-Garten" id="a6"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__enter_k="_target: #KG; _event: mouseenter; animation.property: position; animation.to: -5.5 1 24; animation.dur: 600; animation.easing: easeInOutQuad;
+                                          animation__2.property: rotation; animation__2.to: 0 0 0; animation__2.dur: 1; animation.easing__2: linear"
+                      event-set__leave_k="_target: #KG; _event: mouseleave; animation.property: position; animation.to: -5.5 0.5 24; animation.dur: 300; animation.easing: easeInQuad;
+                                          animation__2.property: rotation; animation__2.to: 0 0 0; animation__2.dur: 1; animation.easing__2: linear"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -1 0.6 1.6; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -10 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+              
+            </a-entity>
+            <!-- 6K --> 
+            <a-entity gltf-model="#6K_Drei_Maedchen_im_Wind" id="b6" 
+                      position="-5.5 0.5 24"
+                      scale="1.2 1.2 1.2"
+                      event-set__enter="_event: mouseenter; animation.property: rotation; animation.to: 0 3600 0; animation.dur: 60000; animation.easing: linear;
+                                        animation__2.property: position; animation__2.to: -5.5 1 24; animation__2.dur: 600; animation__2.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: rotation; animation.to: 0 0 0; animation.dur: 1; animation.easing: linear;
+                                        animation__2.property: position; animation__2.to: -5.5 0.5 24; animation__2.dur: 300; animation__2.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -1.1 0.4 1.35; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -10 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            
+            <!-- 7 -->
+            <a-entity gltf-model="#7_Im_Teich" id="a7"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__enter_k="_target: #BB; _event: mouseenter; animation.property: position; animation.to: -10 0.95 46; animation.dur: 600; animation.easing: easeInOutQuad;
+                                          animation__2.property: rotation; animation__2.to: 0 0 0; animation__2.dur: 1; animation.easing__2: linear"
+                      event-set__leave_k="_target: #BB; _event: mouseleave; animation.property: position; animation.to: -10 0.45 46; animation.dur: 300; animation.easing: easeInQuad;
+                                          animation__2.property: rotation; animation__2.to: 0 0 0; animation__2.dur: 1; animation.easing__2: linear"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to:  -1.1 0.5 1.35 ; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 100 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+              
+            </a-entity>
+            
+            <!-- 7K -->
+            <a-entity gltf-model="#7K_Bürgerbrunnen" 
+                      position="-10 0.45 46"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: -10 0.95 46; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: -10 0.45 46; animation.dur: 300; animation.easing: easeInQuad"
+                      >
+              
+            </a-entity>
+            <a-sphere position="-10 0.5 46" id="b7"
+                      scale="1.8 1.8 1.8"
+                      visible="false"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: -10 0.95 46; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: -10 0.45 46; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__enter_k="_target: #BB; _event: mouseenter; animation.property: rotation; animation.to: 0 3600 0; animation.dur: 60000; animation.easing: linear;
+                                          animation__2.property: position; animation__2.to: -10 0.95 46; animation__2.dur: 600; animation__2.easing: easeInOutQuad"
+                      event-set__leave_k="_target: #BB; _event: mouseleave; animation.property: rotation; animation.to: 0 0 0; animation.dur: 1; animation.easing: linear;
+                                          animation__2.property: position; animation__2.to: -10 0.45 46; animation__2.dur: 300; animation__2.easing: easeInQuad"
+                      
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -1.4 0.3 1.35 ; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                            animation__2.property: rotation; animation__2.to: -30 100 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500"
+                      > </a-sphere>
+            
+            
+            <!-- 8 -->
+            <a-entity gltf-model="#8_Teichbeete_am_Hauptweg" id="a8"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -0.6 1 1.55; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -35 90 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 8K -->
+            <a-entity gltf-model="#8K_Granitsaeule" id="b8"
+                      position="-0.4 0.35 58"
+                      event-set__enter="_event: mouseenter; animation.property: rotation; animation.to: 0 3600 0; animation.dur: 60000; animation.easing: linear"
+                      event-set__leave="_event: mouseleave; animation.property: rotation; animation.to: 0 0 0; animation.dur: 1; animation.easing: linear"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -1.45 0.35 1.98; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 120 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 9 -->
+            <a-entity gltf-model="#9_Teichbeete_am_Gruen" id="a9"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -0.95 0.6 1.55; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -35 80 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 10 -->
+            <a-entity gltf-model="#10_Pflanzen_am_Bach" id="a10"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -1.35 0.45 2.05; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -20 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 11  -->
+            <a-entity gltf-model="#11_Steingarten_Serpentinit" id="a11"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -1.45 0.35 1.95; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -58 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 12 -->
+            <a-entity gltf-model="#12_Steingarten_Kohlenkalk" id="a12"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -1.15 0.35 1.7; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 122 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 13 -->
+            <a-entity gltf-model="#13_Steingarten_Hexenbesen" id="a13"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -1.65 0.4 1.6; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -125 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 14 -->
+            <a-entity gltf-model="#14_Alpenwald" id="a14"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -0.45 0.6 3; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 20 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 15 -->
+            <a-entity gltf-model="#15_Steingarten_Hofer_Marmor" id="a15"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to:  -0.55 0.45 2.45; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 20 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 16 -->
+            <a-entity gltf-model="#16_Steingarten_Krustensteinbrech" id="a16"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -0.9 0.35 1.1; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -160 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 17 -->
+            <a-entity gltf-model="#17_Rund_um_den_Steingarten" id="a17"
+                      position="0 0 0"
+                      
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__enter_k="_target: #SmHG; _event: mouseenter; animation.property: position; animation.to: 15.5 2 30; animation.dur: 600; animation.easing: easeInOutQuad;
+                                            animation__2.property: rotation; animation__2.to: 0 0 0; animation__2.dur: 1; animation.easing__2: linear"
+                      event-set__leave_k="_target: #SmHG; _event: mouseleave; animation.property: position; animation.to: 15.5 1.5 30; animation.dur: 300; animation.easing: easeInQuad;
+                                            animation__2.property: rotation; animation__2.to: 0 0 0; animation__2.dur: 1; animation.easing__2: linear"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -0.17 0.4 2.25; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 20 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 17K -->
+            <a-entity gltf-model="#17K_Steinkugel_mit_Haiku-Gedicht" id="b17"
+                      position="15.5 1.5 30"
+                      scale="0.6 0.6 0.6"
+                      rotation="0 65 0"
+                      event-set__enter="_event: mouseenter; animation.property: rotation; animation.to: 0 3600 0; animation.dur: 60000; animation.easing: linear;
+                                        animation__2.property: position; animation__2.to: 15.5 2 30; animation__2.dur: 600; animation__2.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: rotation; animation.to: 0 0 0; animation.dur: 1; animation.easing: linear;
+                                        animation__2.property: position; animation__2.to: 15.5 1.5 30; animation__2.dur: 300; animation__2.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -0.25 0.3 2; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                          animation__2.property: rotation; animation__2.to: -30 20 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 18 -->
+            <a-entity gltf-model="#18_Felsspaltengarten_Muschelkalk" id="a18"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 0.25 0.5 2.05; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 34 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 19 -->
+            <a-entity gltf-model="#19_Strauchpfingstrosen" id="a19"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 0.7 0.5 1.9; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 15 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 20 -->
+            <a-entity gltf-model="#20_Schattenquartier" id="a20"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 0.5 0.6 2.5; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 20 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 21 -->
+            <a-entity gltf-model="#21_Voreiszeitliche_Pflanzen" id="a21"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 0.7 0.3 1.5; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -15 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 22 -->
+            <a-entity gltf-model="#22_Phlox-Allee" id="a22"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 1.2 0.7 0.3; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -160 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 23 -->
+            <a-entity gltf-model="#23_Silphien" id="a23"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 1.2 0.6 0.3; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -160 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 24 -->
+            <a-entity gltf-model="#24_Pfingstrosenbeet" id="a24"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 1.3 0.4 1.8; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 10 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 25 -->
+            <a-entity gltf-model="#25_Heidegarten" id="a25"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__enter_k="_target: #WvdV; _event: mouseenter; animation.property: position; animation.to: 26 0.95 0; animation.dur: 600; animation.easing: easeInOutQuad;
+                                            animation__2.property: rotation; animation__2.to: 0 0 0; animation__2.dur: 1; animation.easing__2: linear"
+                      event-set__leave_k="_target: #WvdV; _event: mouseleave; animation.property: position; animation.to: 26 0.45 0; animation.dur: 300; animation.easing: easeInQuad;
+                                            animation__2.property: rotation; animation__2.to: 0 0 0; animation__2.dur: 1; animation.easing__2: linear"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 1.05 0.4 1.3; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 10 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 25K -->
+            <a-entity gltf-model="#25K_Walther_von_der_Vogelweide" id="b25"
+                      position="26 0.45 0"
+                      scale="1.2 1.2 1.2"
+                      event-set__enter="_event: mouseenter; animation.property: rotation; animation.to: 0 3600 0; animation.dur: 60000; animation.easing: linear;
+                                        animation__2.property: position; animation__2.to: 26 0.95 0; animation__2.dur: 600; animation__2.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: rotation; animation.to: 0 0 0; animation.dur: 1; animation.easing: linear;
+                                        animation__2.property: position; animation__2.to: 26 0.45 0; animation__2.dur: 300; animation__2.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 1.1 0.3 1.25; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                          animation__2.property: rotation; animation__2.to: -30 10 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 26 -->
+            <a-entity gltf-model="#26_Rosarium" id="a26"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 1.2 0.6 1.35; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -30 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 27 -->
+            <a-entity gltf-model="#27_Bartiris-Hügel" id="a27"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 1.9 0.4 0.5; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -120 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 27K -->
+            <a-entity gltf-model="#27K_Garten-Pavillon" id="b27"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 2.1 0.4 0.65; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -117 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 28 -->
+            <a-entity gltf-model="#28_Eklogit-Huegel" id="a28"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 2.15 0.4 0.13; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -105 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 29 -->
+            <a-entity gltf-model="#29_Wuestenkinder" id="a29"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 1.8 0.5 0.4; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -30 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 30 -->
+            <a-entity gltf-model="#30_Heilpflanzengarten" id="a30"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__enter_k="_target: #DM; _event: mouseenter; animation.property: position; animation.to: 22 0.95 -38; animation.dur: 600; animation.easing: easeInOutQuad;
+                                            animation__2.property: rotation; animation__2.to: 0 0 0; animation__2.dur: 1; animation.easing__2: linear"
+                      event-set__leave_k="_target: #DM; _event: mouseleave; animation.property: position; animation.to: 22 0.45 -38; animation.dur: 300; animation.easing: easeInQuad;
+                                            animation__2.property: rotation; animation__2.to: 0 0 0; animation__2.dur: 1; animation.easing__2: linear"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 2.8 0.6 -1.4; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 150 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 30K -->
+            <a-entity gltf-model="#30K_Das_Matterhorn" id="b30"
+                      position="22 0.45 -38"
+                      scale="0.8 0.8 0.8"
+                      event-set__enter="_event: mouseenter; animation.property: rotation; animation.to: 0 3600 0; animation.dur: 60000; animation.easing: linear;
+                                        animation__2.property: position; animation__2.to: 22 0.95 -38; animation__2.dur: 600; animation__2.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: rotation; animation.to: 0 0 0; animation.dur: 1; animation.easing: linear;
+                                        animation__2.property: position; animation__2.to: 22 0.45 -38; animation__2.dur: 300; animation__2.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 2.32 0.4 -1.24; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                          animation__2.property: rotation; animation__2.to: -30 150 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 31 -->
+            <a-entity gltf-model="#31_Steingarten_Muschelkalk" id="a31"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 1.95 0.6 0; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 -67 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            <!-- 32 -->
+            <a-entity gltf-model="#32_Felsspaltengarten_Gneis" id="a32"
+                      position="0 0 0"
+                      event-set__enter="_event: mouseenter; animation.property: position; animation.to: 0 0.5 0; animation.dur: 600; animation.easing: easeInOutQuad"
+                      event-set__leave="_event: mouseleave; animation.property: position; animation.to: 0 0 0; animation.dur: 300; animation.easing: easeInQuad"
+                      event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 1.95 0.6 0; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: -30 23 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+            </a-entity>
+            
+            
+            
+            
+            <!--Sensor 1-->
+            <a-entity position="32 1.295 -18">
+              <a-entity gltf-model="#Sensor_Icon" id="S1I1"
+                        rotation="0 40 0"
+                        scale="1.2 1.2 1.2"
+                        position="0 2 0"
+                     >
+              
+            
+              </a-entity>
+            
+              <a-sphere position="0 2 0"
+                        scale="1.2 1.2 1.2"
+                        visible="false"
+                        event-set__enter="_target: #S1I1; _event: mouseenter; animation.property: rotation; animation.to: 0 3600 0; animation.dur: 60000; animation.easing: linear"
+                        event-set__leave="_target: #S1I1; _event: mouseleave; animation.property: rotation; animation.to: 0 40 0; animation.dur: 1; animation.easing: linear"
+                        event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 1.815 0.15 0.75; animation.easing: easeInOutQuad; animation.dur: 1500;
+                                           animation__2.property: rotation; animation__2.to: 0 1 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500; "
+                        event-set__graph1="_target: #S1G1_1; _event: click; animation.property: position; animation.to: 0 0 0; animation.dur: 2000"
+                        event-set__graph2="_target: #S1G2_1; _event: click; animation.property: position; animation.to: 0 0.2 0; animation.dur: 2100"
+                        event-set__graph3="_target: #S1G3_1; _event: click; animation.property: position; animation.to: 0 0.4 0; animation.dur: 2200"
+                        event-set__graph4="_target: #S1G4_1; _event: click; animation.property: position; animation.to: 0 0.6 0; animation.dur: 2300"
+                        event-set__hitbox1="_target: #S1C1; _event: click; animation.property: position; animation.to: 0 0.2 0; animation.dur: 2000"
+                        event-set__hitbox2="_target: #S1C2; _event: click; animation.property: position; animation.to: 0 0.385 0; animation.dur: 2100"
+                        event-set__hitbox3="_target: #S1C3; _event: click; animation.property: position; animation.to: 0 0.570 0; animation.dur: 2200"
+                        event-set__hitbox4="_target: #S1C4; _event: click; animation.property: position; animation.to: 0 0.755 0; animation.dur: 2300"
+                      
+                        event-set__invisible="_target: #S1RA; _event: click; animation.property: position; animation.to: 0 -100 0; animation.dur: 1; animation.loop: false"
+                        event-set__visible="_target: #S1RS; _event: click; animation.property: position; animation.to: 0 0 0; animation.dur: 1; animation.loop: false"
+                      
+                      >
+              </a-sphere>
+            
+              <a-entity gltf-model="#Sensor_Ring" id="S1RA"
+                        position="0 0 0"
+                        visible="true"
+                        scale="3 1 3"
+                        animation="property: scale; to: 10 1 10; loop: true; dur: 2000; easing: linear"
+                        animation_2="property: position; to: 0 0 0; loop: true; dur: 2000; easing: linear"
+                      >
+            
+              </a-entity>
+            
+              <a-entity gltf-model="#Sensor_Ring" id="S1RS"
+                        position="0 -100 0"
+                        visible="true"
+                        scale="10 1 10"
+                      
+                      >
+            
+              </a-entity>
+            
+              <a-entity gltf-model="#Sensor_Graph_1" id="S1G1_1"
+                        position="0 -0.5 0"
+                        visible= "false"
+                        scale="1.8 1.8 1.8">  
+              </a-entity>
+              
+              <a-entity gltf-model="#Sensor_Graph_1" id="S1G1_2"
+                        position="0 0.1 0"
+                        scale="1.8 1.8 1.8"
+                        visible= "false"
+                        event-set__enter="_event: mouseenter; animation.property: rotation.y; animation.to: -360 ; animation.dur: 60000; animation.easing: linear"
+                        event-set__leave="_event: mouseleave; animation.property: rotation.y; animation.to: 0; animation.dur: 1; animation.easing: linear">  
+              </a-entity>
+              
+              <a-cylinder position="0 -0.5 0" id="S1C1"
+                          scale="1.735 0.4 1.735"
+                          visible= "false"
+                          event-set__enter="_target: #S1G1_1; _event: mouseenter; animation.property: position.y; animation.to: 0.1 ; animation.dur: 250; animation.easing: easeInQuad"
+                          event-set__leave="_target: #S1G1_1; _event: mouseleave; animation.property: position.y; animation.to: 0 ; animation.dur: 250; animation.easing: easeInQuad"
+                          event-set__invisible="_target: #S1G1_1; _event: click; visible: false"
+                          event-set__invisible_2="_target: #S1G2_1; _event: click; visible: false"
+                          event-set__invisible_3="_target: #S1G3_1; _event: click; visible: false"
+                          event-set__invisible_4="_target: #S1G4_1; _event: click; visible: false"
+                          event-set__visible="_target: #S1G1_2; _event: click; visible: true"
+                          event-set__select="_target: #S1G1_2; _event: click; animation.property: position; animation.to: 0 1.35 0; animation.dur: 1000; animation.easing: easeInOutQuad" 
+                          event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -1.355 0.1 1.9; animation.easing: easeInOutQuad; animation.dur: 1000"
+                          event-set__button1="_target: #S1B_back; _event: click; animation.property: position; animation.to: 0 -0.032 -0.1; animation.dur: 1000"
+                          
+                          >
+              </a-cylinder>
+            
+              <a-entity gltf-model="#Sensor_Graph_2" id="S1G2_1"
+                        position="0 -0.5 0"
+                        visible= "false"
+                        scale="1.75 1.75 1.75">
+              </a-entity>
+              
+              <a-entity gltf-model="#Sensor_Graph_2" id="S1G2_2"
+                        position="0 0.3 0"
+                        scale="1.75 1.75 1.75"
+                        visible="false"
+                        event-set__enter="_event: mouseenter; animation.property: rotation.y; animation.to: -360 ; animation.dur: 60000; animation.easing: linear"
+                        event-set__leave="_event: mouseleave; animation.property: rotation.y; animation.to: 0; animation.dur: 1; animation.easing: linear">
+              </a-entity>
+              
+              <a-cylinder position="0 -0.5 0" id="S1C2"
+                          scale="1.69 0.4 1.69"
+                          visible= "false"
+                          event-set__enter="_target: #S1G2_1; _event: mouseenter; animation.property: position.y; animation.to: 0.3 ; animation.dur: 250; animation.easing: easeInQuad"
+                          event-set__leave="_target: #S1G2_1; _event: mouseleave; animation.property: position.y; animation.to: 0.2; animation.dur: 250; animation.easing: easeInQuad"
+                          event-set__invisible="_target: #S1G2_1; _event: click; visible: false"
+                          event-set__visible="_target: #S1G2_2; _event: click; visible: true"
+                          event-set__invisible_1="_target: #S1G1_1; _event: click; visible: false"
+                          event-set__invisible_3="_target: #S1G3_1; _event: click; visible: false"
+                          event-set__invisible_4="_target: #S1G4_1; _event: click; visible: false"
+                          event-set__select="_target: #S1G2_2; _event: click; animation.property: position; animation.to: 0 1.35 0; animation.dur: 1000; animation.easing: easeInOutQuad" 
+                          event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -1.355 0.1 1.9; animation.easing: easeInOutQuad; animation.dur: 1000"
+                          event-set__button1="_target: #S1B_back; _event: click; animation.property: position; animation.to: 0 -0.032 -0.1; animation.dur: 1000"
+                          
+                          >
+              </a-cylinder>
+            
+              <a-entity gltf-model="#Sensor_Graph_3" id="S1G3_1"
+                        position="0 -0.5 0"
+                        visible= "false"
+                        scale="1.7 1.7 1.7">
+              </a-entity>
+              
+              <a-entity gltf-model="#Sensor_Graph_3" id="S1G3_2"
+                        position="0 0.5 0"
+                        scale="1.7 1.7 1.7"
+                        visible="false"
+                        event-set__enter="_event: mouseenter; animation.property: rotation.y; animation.to: -360 ; animation.dur: 60000; animation.easing: linear"
+                        event-set__leave="_event: mouseleave; animation.property: rotation.y; animation.to: 0; animation.dur: 1; animation.easing: linear"
+                        >
+              </a-entity>
+              
+              <a-cylinder position="0 -0.5 0" id="S1C3"
+                          scale="1.645 0.4 1.645"
+                          visible= "false"
+                          event-set__enter="_target: #S1G3_1; _event: mouseenter; animation.property: position.y; animation.to: 0.5 ; animation.dur: 250; animation.easing: easeInQuad"
+                          event-set__leave="_target: #S1G3_1; _event: mouseleave; animation.property: position.y; animation.to: 0.4; animation.dur: 250; animation.easing: easeInQuad"
+                          event-set__invisible="_target: #S1G3_1; _event: click; visible: false"
+                          event-set__invisible_1="_target: #S1G1_1; _event: click; visible: false"
+                          event-set__invisible_2="_target: #S1G2_1; _event: click; visible: false"
+                          event-set__invisible_4="_target: #S1G4_1; _event: click; visible: false"
+                          event-set__visible="_target: #S1G3_2; _event: click; visible: true"
+                          event-set__select="_target: #S1G3_2; _event: click; animation.property: position; animation.to: 0 1.35 0; animation.dur: 1000; animation.easing: easeInOutQuad" 
+                          event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -1.355 0.1 1.9; animation.easing: easeInOutQuad; animation.dur: 1000"
+                          event-set__button1="_target: #S1B_back; _event: click; animation.property: position; animation.to: 0 -0.032 -0.1; animation.dur: 1000"
+                          
+                          >
+              </a-cylinder>
+            
+              <a-entity gltf-model="#Sensor_Graph_4" id="S1G4_1"
+                        position="0 -0.5 0"
+                        visible= "false"
+                        scale="1.65 1.65 1.65">
+              </a-entity>
+              
+              <a-entity gltf-model="#Sensor_Graph_4" id="S1G4_2"
+                        position="0 0.7 0"
+                        scale="1.65 1.65 1.65"
+                        visible= "false"
+                        event-set__enter="_event: mouseenter; animation.property: rotation.y; animation.to: -360 ; animation.dur: 60000; animation.easing: linear"
+                        event-set__leave="_event: mouseleave; animation.property: rotation.y; animation.to: 0; animation.dur: 1; animation.easing: linear">
+              </a-entity>
+              
+              <a-cylinder position="0 -0.5 0" id="S1C4"
+                          scale="1.6 0.4 1.6"
+                          visible= "false"
+                          event-set__enter="_target: #S1G4_1; _event: mouseenter; animation.property: position.y; animation.to: 0.7 ; animation.dur: 250; animation.easing: easeInQuad"
+                          event-set__leave="_target: #S1G4_1; _event: mouseleave; animation.property: position.y; animation.to: 0.6; animation.dur: 250; animation.easing: easeInQuad"
+                          event-set__invisible="_target: #S1G4_1; _event: click; visible: false"
+                          event-set__invisible_1="_target: #S1G1_1; _event: click; visible: false"
+                          event-set__invisible_2="_target: #S1G2_1; _event: click; visible: false"
+                          event-set__invisible_3="_target: #S1G3_1; _event: click; visible: false"
+                          event-set__visible="_target: #S1G4_2; _event: click; visible: true"
+                          event-set__select="_target: #S1G4_2; _event: click; animation.property: position; animation.to: 0 1.35 0; animation.dur: 1000; animation.easing: easeInOutQuad" 
+                          event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -1.355 0.1 1.9; animation.easing: easeInOutQuad; animation.dur: 1000"
+                          event-set__button1="_target: #S1B_back; _event: click; animation.property: position; animation.to: 0 -0.032 -0.1; animation.dur: 1000"
+                          
+                          >
+              </a-cylinder>
+              
+            </a-entity>
+            
+          </a-entity>
+         
+          <!--<a-entity light="type: ambient; color: #BBB"></a-entity>-->
+        <a-entity light="type: directional; color: #EEE; intensity: 1" position="0 4 4"></a-entity>
+        <a-entity light="type: directional; color: #EEE; intensity: 1" position="0 -4 -4"></a-entity>
+        <a-entity light="type: directional; color: #EEE; intensity: 1" position="0 -4 4"></a-entity>
+        <a-entity light="type: directional; color: #EEE; intensity: 1" position="0 4 -4"></a-entity>
+
+        
+        <!-- camera -->
+        
+        <a-camera id= "camera" position="0 3 4.5" rotation="-40 0 0"
+                  look-controls-enabled="false"
+                  fov="40"
+                  wasd-controls-enabled="false"
+                  >
+          <a-plane src="#home"
+                   transparent="true"
+                   height="1"
+                   width="1"
+                   position= "0 0.03 -0.1"
+                   scale="0.005 0.005 0.005"
+                   event-set__enter=" _event: mouseenter; animation.property: scale; animation.to: 0.0055 0.0055 0.0055; animation.dur: 150; animation.easing: easeInQuad"
+                   event-set__leave=" _event: mouseleave; animation.property: scale; animation.to: 0.005 0.005 0.005; animation.dur: 150; animation.easing: easeInQuad"
+                   event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: 0 3 4.5 animation.easing: easeInOutQuad; animation.dur: 1500;
+                                          animation__2.property: rotation; animation__2.to: -40 0 0; animation__2.easing: easeInOutQuad; animation__2.dur: 1500">
+          </a-plane>
+          
+          <a-plane src="#arrow_left" id="S1B_back"
+                   transparent="true"
+                   position= "0 -0.05 -0.1"
+                   rotation="0 0 90"
+                   scale="0.0035 0.0035 0.0035"
+                   event-set__invisible1_1="_target: #S1G1_2; _event: click; visible: false"
+                   event-set__invisible1_2="_target: #S1G1_2; _event: click; animation.property: position; animation.to: 0 0 0; animation.dur: 1000; animation.easing: easeInOutQuad" 
+                   event-set__invisible2_1="_target: #S1G2_2; _event: click; visible: false"
+                   event-set__invisible2_2="_target: #S1G2_2; _event: click; animation.property: position; animation.to: 0 0.2 0; animation.dur: 1000; animation.easing: easeInOutQuad" 
+                   event-set__invisible3_1="_target: #S1G3_2; _event: click; visible: false"
+                   event-set__invisible3_2="_target: #S1G3_2; _event: click; animation.property: position; animation.to: 0 0.4 0; animation.dur: 1000; animation.easing: easeInOutQuad" 
+                   event-set__invisible4_1="_target: #S1G4_2; _event: click; visible: false"
+                   event-set__invisible4_2="_target: #S1G4_2; _event: click; animation.property: position; animation.to: 0 0.6 0; animation.dur: 1000; animation.easing: easeInOutQuad"
+                   event-set__visible1="_target: #S1G1_1; _event: click; visible: true"
+                   event-set__visible2="_target: #S1G2_1; _event: click; visible: true"
+                   event-set__visible3="_target: #S1G3_1; _event: click; visible: true"
+                   event-set__visible4="_target: #S1G4_1; _event: click; visible: true"
+                   event-set__position="_target: #camera; _event: click; animation.property: position; animation.to: -1.35 0.1 2.05; animation.easing: easeInOutQuad; animation.dur: 1000"
+                   event-set__button1="_target: #S1B_back; _event: click; animation.property: position; animation.to: 0 -0.05 -0.1; animation.dur: 1000"
+                   event-set__button2="_target: #S1B_left; _event: click; animation.property: position; animation.to: -0.01 -0.05 -0.1; animation.dur: 1000"
+                   event-set__button3="_target: #S1B_right; _event: click; animation.property: position; animation.to: 0.01 -0.05 -0.1; animation.dur: 1000"
+                   >
+          </a-plane>
+          
+          
+          
+          <a-entity light="type: directional; color: #EEE; intensity: 0.4" position="0 0 -0.5"></a-entity>
+          
+        </a-camera>
+        
+        
+        
+        
+       
+        
+        <!--camera ride 4
+        <a-camera position="0 1.6 3.7" rotation="-30 0 0" 
+                  look-controls-enabled="false"
+                  fov="40"
+                  wasd-controls-enabled="false"
+                  animation="property: position; to:  0.35 0.6 0.05; easing: easeInOutQuad; dur: 1500"
+                  animation__2="property: rotation; to: -30 -63 0; easing: easeInOutQuad; dur: 1500"
+                  >
+        </a-camera>
+        -->
+         <a-entity camera look-controls position="0 1.6 0"
+                   enabled="false"></a-entity>
+        
+        <a-sky color ="#323232" ></a-sky>
+        
+        
+        
+        
+        
+          
+        
+      </a-scene>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+​
+    <title>Virtual botanic garden</title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+  
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@5.1.2/dist/aframe-animation-component.min.js"></script>
+   
+    
+  </head>  
+  <body>
+      <a-scene loading-screen="dotsColor: green; backgroundColor: white" cursor="rayOrigin: mouse" vr-mode-ui="enabled: false">
+        
+        <a-assets>
+           <img id="home" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2Fhomeicon.png?v=1594568190751">
+           <img id="arrow_left" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2FarrowVirtualBotanicalGarden.png?v=1594394999070">
+           <img id="arrow_right" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2Farrow_right.png?v=1594395133629">
+          
+          
+          <a-asset-item id="groundplate" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2FGroundplate.gltf?v=1594122477693"></a-asset-item>
+          <a-asset-item id="1_Steingarten_Blau_Weiss" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F1_SteingartenWB.gltf?v=1593861376449"></a-asset-item>
+          <a-asset-item id="2_Prachtstauden" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F2_Prachtstauden.gltf?v=1593862384843"></a-asset-item>
+          <a-asset-item id="3_Staudenbeete" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F3_Staudenbeete.gltf?v=1593861374648"></a-asset-item>
+          <a-asset-item id="4_Wechselflor" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F4_Wechselflor.gltf?v=1593862911960"></a-asset-item>
+          <a-asset-item id="4K_Froschbrunnen" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F4K.gltf?v=1593976669057"></a-asset-item>
+          <a-asset-item id="5_Pergola" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F5_Pergola.gltf?v=1593863386489"></a-asset-item>
+          <a-asset-item id="6_Kaleidoskop-Garten" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F6_Kaleidoskop%20Garten.gltf?v=1593861375170"></a-asset-item>
+          <a-asset-item id="6K_Drei_Maedchen_im_Wind" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F6K.gltf?v=1593974827229"></a-asset-item>
+          <a-asset-item id="7_Im_Teich" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F7_ImTeich.gltf?v=1593863768310"></a-asset-item>
+          <a-asset-item id="7K_Bürgerbrunnen" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F7K.gltf?v=1593976449531"></a-asset-item>
+          <a-asset-item id="8_Teichbeete_am_Hauptweg" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F8_TeichbeeteHauptweg.gltf?v=1593868552374"></a-asset-item>
+          <a-asset-item id="8K_Granitsaeule" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F8K.gltf?v=1593974975338"></a-asset-item>
+          <a-asset-item id="9_Teichbeete_am_Gruen" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F9_TeichbeeteZumGr%C3%BCn.gltf?v=1593861375883"></a-asset-item>
+          <a-asset-item id="10_Pflanzen_am_Bach" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F10_PflanzenAmBach.gltf?v=1593864315374"></a-asset-item>
+          <a-asset-item id="11_Steingarten_Serpentinit" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F11_SteingartenSerpentit.gltf?v=1594075176691"></a-asset-item>
+          <a-asset-item id="12_Steingarten_Kohlenkalk" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F12_SteingartenKohlenkalk.gltf?v=1594075469463"></a-asset-item>
+          <a-asset-item id="13_Steingarten_Hexenbesen" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F13_SteinagrtenHexenbesen.gltf?v=1594075177550"></a-asset-item>
+          <a-asset-item id="14_Alpenwald" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F14_Alpenwald.gltf?v=1593868460737"></a-asset-item>
+          <a-asset-item id="15_Steingarten_Hofer_Marmor" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F15_SteingatzenHoferMarmor.gltf?v=1594075177259"></a-asset-item>
+          <a-asset-item id="16_Steingarten_Krustensteinbrech" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F16_Steingarten%20Krustensteinbruch.gltf?v=1594075176508"></a-asset-item>
+          <a-asset-item id="17_Rund_um_den_Steingarten" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F17_RundUmDenSteingaren.gltf?v=1594075176639"></a-asset-item>
+          <a-asset-item id="17K_Steinkugel_mit_Haiku-Gedicht" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F17K.gltf?v=1593975540249"></a-asset-item>
+          <a-asset-item id="18_Felsspaltengarten_Muschelkalk" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F18_FelsspaltengartenMuschelkalk.gltf?v=1594077555247"></a-asset-item>
+          <a-asset-item id="19_Strauchpfingstrosen" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F19_Strauchpfingstrosen.gltf?v=1593861624591"></a-asset-item>
+          <a-asset-item id="20_Schattenquartier" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F20_Schattenquartier.gltf?v=1593868460871"></a-asset-item>
+          <a-asset-item id="21_Voreiszeitliche_Pflanzen" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F21_VoreiszeitlichePflanzen.gltf?v=1594197803851"></a-asset-item>
+          <a-asset-item id="22_Phlox-Allee" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F22_PhloxAllee.gltf?v=1593868645901"></a-asset-item>
+          <a-asset-item id="23_Silphien" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F23_Sillphien.gltf?v=1593868645766"></a-asset-item>
+          <a-asset-item id="24_Pfingstrosenbeet" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F24_Pfingstrosenbeet.gltf?v=1593868645354"></a-asset-item>
+          <a-asset-item id="25_Heidegarten" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F25_Heidegarten.gltf?v=1593861998811"></a-asset-item>
+          <a-asset-item id="25K_Walther_von_der_Vogelweide" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F25K.gltf?v=1593974824371"></a-asset-item>
+          <a-asset-item id="26_Rosarium" src="https://cdn.glitch.com/dc60cb3e-5801-4ad5-900e-7f969086308d%2F26_Rosarium.gltf?v=1593861999265"></a-asset-item>
